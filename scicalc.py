@@ -484,6 +484,12 @@ def main():
         except Exception:
             pass
     root = tk.Tk()
+    try:
+        import os
+        base = getattr(sys, "_MEIPASS", os.path.dirname(os.path.abspath(__file__)))
+        root.iconbitmap(os.path.join(base, "scicalc.ico"))
+    except Exception:
+        pass
     App(root)
     root.mainloop()
 
