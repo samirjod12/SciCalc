@@ -19,7 +19,7 @@ jobs:
         run: python -m pip install --upgrade pyinstaller
 
       - name: Build exe
-        run: python -m PyInstaller --noconsole --onefile --name SciCalc scicalc.py
+        run: python -m PyInstaller --noconsole --onefile --name SciCalc --icon scicalc.ico --add-data "scicalc.ico;." scicalc.py
 
       - name: Upload exe
         uses: actions/upload-artifact@v4
